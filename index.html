@@ -41,7 +41,7 @@
 
 
     var dice = {
-      sides: 6,
+      sides: 1,
       roll: function () {
         var randomNumber = Math.floor(Math.random() * this.sides) + 1;
         return randomNumber;
@@ -143,6 +143,31 @@
       else {
 
       }
+
+      //ladder
+
+      if(nbrcase == 4){
+        screenMovement(nbrcase,6)
+        alert("une échelle ! + 6")
+      }
+
+      if(nbrcase == 7){
+        screenMovement(nbrcase,12)
+        alert("une échelle ! + 12")
+      }
+
+      //snake
+
+      if(nbrcase == 23){
+        screenMovement(nbrcase,-5)
+        alert("Aïe ! un serpent ! - 5")
+      }
+
+      if(nbrcase == 25){
+        screenMovement(nbrcase,-9)
+        alert("Aïe ! un serpent ! - 9")
+      }
+
 
       //endgame
 

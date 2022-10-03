@@ -4,6 +4,7 @@
 
 button {
   text-align: center;
+  margin-top: 10px;
 }
 
 .diceImgResult {
@@ -21,6 +22,7 @@ button {
   background-image: url("img/workshop.png");
   animation-duration: 1s;
   display: flex;
+  margin: 10px auto 25px auto;
 }
 
 #character{
