@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <main id="main">
+    <div class="container">
+
+      <div id="screen" class="case_1 giveAnim">
+
+        <img src="img/dice.gif" id="character">
+
+      </div>
+
+      <div id="diceResult">
+        <img class="diceImgResult" src="img/1.svg">
+      </div>
+      <button id="button">Roll Dice</button>
+    
+      <button id="buttonAtk">Attack !</button>
+
+    </div>
+  </main>
+
+
+
+
+
+
+
+  <script>
+
+
+
+    var dice = {
+      sides: 6,
+      roll: function () {
+        var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+        return randomNumber;
+      }
+    }
+
+    var nbrcase = 1;
+
+    function screenMovement(pos, dice) {
+
+      var objctf = pos + dice
+
+      const screenVideo = document.querySelector('#screen')
+
+      var statCoor = window.getComputedStyle(document.getElementById('screen')).backgroundPosition
+
+
+
+      screenVideo.classList.remove("case_" + pos)
+
+      if (objctf > 29) {
+        objctf = 29
+      }
+
+
+      pos = objctf
+
+      screenVideo.classList.add('case_' + pos);
+
+      var endCoor = window.getComputedStyle(document.getElementById('screen')).backgroundPosition
+
+      //change anim paramettre
+
+      document.documentElement.style
+        .setProperty('--my-start-coordonate', statCoor);
+      document.documentElement.style
+        .setProperty('--my-end-coordonate', endCoor);
+
+
+
+      nbrcase = objctf
+
+    }
+
+
+
+
+    //restart anim
+    var element = document.querySelector('.giveAnim');
+
+    element.addEventListener('animationend', function () {
+      this.style.webkitAnimationName = '';
+      console.log('Fin de l\'anim');
+      if (nbrcase < 29) {
+        document.getElementById('button').classList.remove('OFF')
+      }
+
+    }, false);
+
+    const test = document.querySelector('#screen')
+
+    const giveAnimBack = () => {
+      test.classList.add('giveAnim')
+    }
+
+
+
+    //change dice depending on result
+
+    function printNumber(number) {
+      const diceResultImg = document.querySelector('.diceImgResult')
+      diceResultImg.src = 'img/' + number + '.svg'
+      return diceResultImg
+    }
+
+
+    //dice roll
+
+    var button = document.getElementById('button');
+
+    button.onclick = function () {
+
+      var result = dice.roll();
+
+
+      document.getElementById('button').classList.add('OFF')
+
+      printNumber(result);
+      screenMovement(nbrcase, result)
+
+
+
+      if (test && test.classList[0] === 'giveAnim') {
+        test.classList.remove('giveAnim')
+        setTimeout(() => {
+          giveAnimBack()
+        }, 1);
+      }
+      else {
+
+      }
+
+      //endgame
+
+      if (nbrcase >= 29) {
+
+
+        alert("BOSSFIGHT !")
+        document.getElementById('diceResult').classList.add('OFF')
+        document.getElementById('button').classList.add('OFF')
+        document.getElementById('buttonAtk').style.display = "initial"
+
+        document.getElementById('screen').classList.add('giveAnimScreenBoss')
+        document.getElementById('character').classList.add('giveAnimCharacterBoss')
+      }
+
+    }
+
+
+    //boss
+
+    var pv = 15
+
+    var buttonAtk = document.getElementById('buttonAtk');
+
+    buttonAtk.onclick = function () {
+      pv = pv - 1
+
+      if (pv < 1) {
+        alert('VICTOIRE ! ')
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
+<!--Jacob Schaefer & Arthur DEBRUILLE 

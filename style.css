@@ -1,0 +1,230 @@
+.OFF {
+  display: none;
+}
+
+button {
+  text-align: center;
+}
+
+.diceImgResult {
+  width: 33%;
+}
+
+#buttonAtk {
+  display: none;
+  margin-top: 50px;
+}
+
+#screen {
+  width: 340px;
+  height: 400px;
+  background-image: url("img/workshop.png");
+  animation-duration: 1s;
+  display: flex;
+}
+
+#character{
+  width: 270px;
+  margin: auto auto 60px auto;
+  height: fit-content;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#video {
+  width: 10px;
+}
+
+#diceResult {
+  text-align: center;
+}
+
+/* position cases */
+
+.case_1 {
+  background-position: 59% 97%;
+}
+
+.case_2 {
+  background-position: 61% 94%;
+}
+
+.case_3 {
+  background-position: 56% 90%;
+}
+
+.case_4 {
+  background-position: 51% 88%;
+}
+
+.case_5 {
+  background-position: 36% 82%;
+}
+
+.case_6 {
+  background-position: 33% 79%;
+}
+
+.case_7 {
+  background-position: 38% 77%;
+}
+
+.case_8 {
+  background-position: 50% 71%;
+}
+
+.case_9 {
+  background-position: 56% 73%;
+}
+
+.case_10 {
+  background-position: 64% 73%;
+}
+
+.case_11 {
+  background-position: 69% 71%;
+}
+
+.case_12 {
+  background-position: 79% 64%;
+}
+
+.case_13 {
+  background-position: 74% 62%;
+}
+
+.case_14 {
+  background-position: 64% 53%;
+}
+
+.case_15 {
+  background-position: 56% 54%;
+}
+
+.case_16 {
+  background-position: 50% 52%;
+}
+
+.case_17 {
+  background-position: 43% 53%;
+}
+
+.case_18 {
+  background-position: 30% 60%;
+}
+
+.case_19 {
+  background-position: 23% 62%;
+}
+
+.case_20 {
+  background-position: 16% 62%;
+}
+
+.case_21 {
+  background-position: 13% 59%;
+}
+
+.case_22 {
+  background-position: 19% 56%;
+}
+
+.case_23 {
+  background-position: 27% 44%;
+}
+
+.case_24 {
+  background-position: 41% 39%;
+}
+
+.case_25 {
+  background-position: 47% 41%;
+}
+
+.case_26 {
+  background-position: 55% 37%;
+}
+
+.case_27 {
+  background-position: 56% 33%;
+}
+
+.case_28 {
+  background-position: 51% 30%;
+}
+
+.case_29 {
+  background-position: 46% 21%;
+}
+
+
+/* animation */
+
+.giveAnim {
+  animation: cameraSlide;
+}
+
+:root {
+  --my-start-coordonate: 59% 97%;
+  --my-end-coordonate: 59% 97%;
+}
+
+@keyframes cameraSlide {
+  from {
+    background-position: var(--my-start-coordonate);
+  }
+
+  to {
+    background-position: var(--my-end-coordonate);
+  }
+}
+
+
+/* anim boss*/
+
+.giveAnimScreenBoss{
+  animation: screenBoss;
+  background-position: 46% 9%;
+  background-size: 350%;
+  animation-duration: 2s;
+}
+
+@keyframes screenBoss {
+  from{
+    background-position: 46% 21%;
+    background-size: 800%;
+  }
+
+  to{
+    background-position: 46% 9%;
+    background-size: 350%;
+  }
+  
+}
+
+.giveAnimCharacterBoss{
+  width: 150px !important;
+  margin: auto auto 77px auto !important;
+  animation: CharacterBoss !important;
+  animation-duration: 2s !important;
+}
+
+@keyframes CharacterBoss{
+  from{
+    width: 270px;
+  margin: auto auto 60px auto;
+
+  }
+
+  to{
+    width: 150px;
+  margin: auto auto 77px auto;
+
+  }
+}
