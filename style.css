@@ -26,7 +26,6 @@ button {
 #character{
   width: 270px;
   margin: auto auto 60px auto;
-  height: fit-content;
 }
 
 .container {
