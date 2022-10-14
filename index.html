@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
@@ -28,6 +31,17 @@
       <button id="buttonAtk">À l'attaque !</button>
 
     </div>
+
+    <div id="ecrantPortail" class="OFF">
+
+      <a href="https://atheneum.u-bourgogne.fr/programmation-agenda/cite-internationale-du-jeu/"><H1>Cité Internationale du Jeu</H1></a>
+
+      <h3>Faire le quizz</h3>
+      <h3>Voir la vidéo</h3>
+      <a href="https://crous-workshop-v2.vercel.app/"><h3>Rejouer</h3></a>
+
+    </div>
+
   </main>
 
 
@@ -200,6 +214,7 @@
 
       if (pv < 1) {
         alert('VICTOIRE ! ')
+        document.getElementById('ecrantPortail').classList.remove('OFF')
       }
     }
 
