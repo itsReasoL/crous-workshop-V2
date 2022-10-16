@@ -82,13 +82,15 @@ a:link, a:visited{
 
 #skipButton{
   border-style: none;
-  background-color: white;
-  color: black;
-  text-decoration: underline;
-  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  position: fixed;
   bottom: 0px;
+  right: 30px;
 }
 
+#skipImg{
+  width: 40px;
+}
 
 
 /* position cases */
