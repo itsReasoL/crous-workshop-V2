@@ -30,6 +30,8 @@
     
       <button id="buttonAtk">À l'attaque !</button>
 
+      <button id="skipButton">Aller au portail</button>
+
     </div>
 
     <div id="ecrantPortail" class="OFF">
@@ -51,6 +53,14 @@
 
 
   <script>
+
+    //skip the game
+
+    var skipButton = document.getElementById('skipButton');
+
+    skipButton.onclick = function() {
+      document.getElementById('ecrantPortail').classList.remove('OFF')    
+    }
 
 
 
@@ -206,16 +216,37 @@
 
     var buttonAtk = document.getElementById('buttonAtk');
 
+    var alternator = Math.round(Math.random(2))
+
     buttonAtk.onclick = function () {
 
       document.getElementById('buttonAtk').innerHTML = "Encore !"
 
       pv = pv - 1
 
+      if (alternator == 1){
+      document.getElementById('screen').classList.add('Lhurted')
+      console.log('L');
+      setTimeout(() => {
+        document.getElementById('screen').classList.remove('Lhurted')
+        }, 100);
+
+      } 
+      if(alternator == 0){
+        document.getElementById('screen').classList.add('Rhurted')
+      console.log('R');
+      setTimeout(() => {
+        document.getElementById('screen').classList.remove('Rhurted')
+        }, 100);
+      }
+
+
       if (pv < 1) {
         alert('VICTOIRE ! ')
         document.getElementById('ecrantPortail').classList.remove('OFF')
       }
+
+      alternator = Math.round(Math.random(2))
     }
 
   </script>

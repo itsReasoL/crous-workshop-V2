@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 .OFF {
   display: none;
 }
@@ -76,6 +80,14 @@ a:link, a:visited{
   color: white;
 }
 
+#skipButton{
+  border-style: none;
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 0px;
+}
 
 
 
@@ -194,7 +206,7 @@ a:link, a:visited{
 }
 
 .case_29 {
-  background-position: 46% 21%;
+  background-position: 45% 21%;
 }
 
 
@@ -261,4 +273,14 @@ a:link, a:visited{
   margin: auto auto 77px auto;
 
   }
+}
+
+.Rhurted{
+  filter:opacity(25%);
+  margin: 15px 20px 20px auto !important;
+}
+
+.Lhurted{
+  filter:opacity(25%);
+  margin: 5px 30px 30px auto !important;
 }
